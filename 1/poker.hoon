@@ -13,7 +13,6 @@
   ::  (i.e., check if the hand is a royal flush and, if so, no other 
   ::  evaluation should happen) and, in the case of ties, compare 
   ::  highest ranked cards to determine the winner
-  ::  
   ::  report the winner with the winning hand, or a tie
   ::
   (report-winner hands)
@@ -25,7 +24,7 @@
   =/  winning-indices  (fand ~[high-score] scores)
   ?:  (gth (lent winning-indices) 1)
     "Tie!"
-  ?:  =(0 (snag 0 winning-indices))
+  ?:  =(0 -:winning-indices)
     "Hand one wins!"
   "Hand two wins!"
 ++  evaluate-hand
